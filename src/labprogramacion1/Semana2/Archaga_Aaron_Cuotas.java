@@ -5,35 +5,32 @@ import java.util.Scanner;
 public class Archaga_Aaron_Cuotas {
     public static void main(String[] args){
     Scanner entrada = new Scanner(System.in);
-    double cantidadprestamo, interesmensual, cuotamensual, tasainteres, comision, comisionmensual, seguromensual, seguro, totalprestamo;
-    int plazomes;
+    double montoprestamo, interesmensual, interestotal, seguromensual, segurototal, comision, cuotamensual, totalpagar;
+    int plazomeses;
     
         System.out.println("Ingrese su monto de prestamo: ");
-        cantidadprestamo = entrada.nextDouble();
-        
+        montoprestamo = entrada.nextDouble();
         System.out.println("Ingrese el plazo en meses: ");
-        plazomes = entrada.nextInt();
-        cuotamensual = cantidadprestamo / plazomes;
-        
+        plazomeses = entrada.nextInt();
         System.out.println("Ingrese la tasa del interes mensual: ");
-        tasainteres = entrada.nextDouble();
-        tasainteres = tasainteres / 100;
-        interesmensual = cuotamensual * tasainteres;
-        
+        interesmensual = entrada.nextDouble();
+        interesmensual = interesmensual / 100;
         System.out.println("Ingrese la comision por cuota: ");
         comision = entrada.nextDouble();
-        comision = comision / 100;
-        comisionmensual = cuotamensual * comision;
-        
         System.out.println("Ingrese la cuota de seguro mensual: ");
-        seguro = entrada.nextDouble();
-        seguromensual = cuotamensual * seguro;
+        seguromensual = entrada.nextDouble();
+        seguromensual = seguromensual / 100;
         
-        totalprestamo = cuotamensual + interesmensual + comisionmensual + seguro;
+        
+        interestotal = montoprestamo * interesmensual;
+        segurototal = montoprestamo * seguromensual;
+        cuotamensual = (montoprestamo/plazomeses) + interestotal + segurototal + comision;
+        totalpagar = cuotamensual * plazomeses;
         
         System.out.println("----CUOTAS MENSUALES----");
-        System.out.println("Cuota de pago Mensual: HNL "+cuotamensual);
-        System.out.println("Total a pagar: HNL "+totalprestamo);
-    
+        System.out.println("Cuota de pago mensual: HNL "+cuotamensual);
+        System.out.println("Total a pagar: HNL "+totalpagar);
+        
+       
     }
 }
