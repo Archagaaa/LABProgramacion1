@@ -6,7 +6,7 @@ public class Archaga_Aaron_Formulas {
     public static void main(String [] args){
         Scanner entrada = new Scanner(System.in);
         
-        int numerador1, numerador2, denominador1, denominador2;
+        int numerador1, numerador2, denominador1, denominador2, num2;
         double resultado;
         
         /*
@@ -25,6 +25,7 @@ public class Archaga_Aaron_Formulas {
         System.out.println("El resultado es: "+resultado);
         */
         
+        /*
         //EjercicioB
         System.out.println("Ejercicio B");
         System.out.println("Ingrese el primer numerador: ");
@@ -43,6 +44,19 @@ public class Archaga_Aaron_Formulas {
         denominador2 = entrada.nextInt();
         
         resultado = (numerador1 / (denominador1var1 - denominador1)) - ((numerador2*var1num2*var2num2)/denominador2);
+        System.out.println("Su resultado es: "+resultado);
+        */
+        
+        //EjercicioC
+        System.out.println("Ejercicio C");
+        System.out.println("Ingrese el numerador 1: ");
+        numerador1 = entrada.nextInt();
+        System.out.println("Ingrese el denominador 1: ");
+        denominador1 = entrada.nextInt();
+        System.out.println("Ingrese el 2ndo numero: ");
+        num2 = entrada.nextInt();
+        
+        resultado = (numerador1/denominador1) + num2;
         System.out.println("Su resultado es: "+resultado);
     }
 }
