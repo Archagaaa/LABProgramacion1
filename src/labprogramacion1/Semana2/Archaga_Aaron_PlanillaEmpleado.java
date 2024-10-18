@@ -13,7 +13,7 @@ public class Archaga_Aaron_PlanillaEmpleado {
         nombre = entrada.nextLine();
         System.out.print("Ingrese la cantidad de horas laboradas al mes: ");
         horasMes = entrada.nextDouble();
-        System.out.println("Ingrese la tarifa por hora: ");
+        System.out.print("Ingrese la tarifa por hora: ");
         tarifaHora = entrada.nextDouble();
         salarioSemanal = (horasMes * tarifaHora)/4;
         
