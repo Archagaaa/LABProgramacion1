@@ -19,7 +19,34 @@ public class Archaga_Aaron_Control {
         
         switch(opcion) {
             case 1:
-                        
+                System.out.println("-----CADENA------");
+                String cadenacaracter;
+                
+                System.out.println("Ingrese la palabra: ");
+                cadenacaracter = sc.next();
+                
+                int maxrepetidas = 0;
+                int longitudcaracter = cadenacaracter.length();
+                char caracterrepetido = ' ', caracter = 0;
+                int contador = 0;
+                int contadorcaracter = 0;
+                
+                while(caracter < 256){
+                    while(contadorcaracter < longitudcaracter){
+                        if(cadenacaracter.charAt(contadorcaracter)==caracter){
+                            contador++;
+                        }
+                    contadorcaracter++;
+                    } 
+                    if (contador > maxrepetidas){
+                        maxrepetidas = contador;
+                        caracterrepetido = caracter;
+                    }
+                caracter++;
+                }
+                System.out.println("El caracter mas repetido es:"+caracterrepetido);
+                System.out.println("El caracter se repitio: "+maxrepetidas+" veces");
+                
             break;
             
             case 2:
@@ -52,7 +79,7 @@ public class Archaga_Aaron_Control {
                     
                 }
                 promedio = suma / cantidadnota;
-                System.out.println("El promedio es: "+String.format( "%.2f", promedio));
+                System.out.println("El promedio es: "+String.format( "%.2f", promedio)+" %");
                 System.out.println("La nota mayor es: "+notamayor);
                 System.out.println("La nota menor es: "+notamenor);
             break;
