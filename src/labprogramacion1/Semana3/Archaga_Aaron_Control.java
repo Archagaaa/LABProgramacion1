@@ -1,6 +1,8 @@
+
 package labprogramacion1.Semana3;
 
 import java.util.Scanner;
+
 
 public class Archaga_Aaron_Control {
     public static void main(String[] args) {
@@ -77,4 +79,6 @@ public class Archaga_Aaron_Control {
         }
         
     }
+}
+
 }
