@@ -86,6 +86,10 @@ public class Archaga_Aaron_Control {
             
             case 3:
                 System.out.println("-----CLASES-----");
+                String fecha;
+                
+                System.out.println("Ingrese el dia la fecha y el mes en formato 'dia, DD/MM'");
+                
                 
             break;
         }
