@@ -19,22 +19,7 @@ public class Archaga_Aaron_Control {
         
         switch(opcion) {
             case 1:
-                System.out.println("-----CADENA-----");
-                String cadena;
-                int contador = 0,repeticionmax = 0,conteocaracter = 0;
-                char chrepetido = ' ', caracter = 0;
-                
-                System.out.println("Ingrese la palabra: ");
-                cadena = sc.nextLine();
-                int largo = cadena.length();
                         
-                while (caracter < 256){
-                    while(conteocaracter < largo){
-                    }
-                    caracter++;
-                }
-                        
-                
             break;
             
             case 2:
