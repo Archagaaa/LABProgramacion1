@@ -43,7 +43,7 @@ public class Archaga_Aaron_Formulas {
         System.out.println("Ingrese el segundo denominador: ");
         denominador2 = entrada.nextInt();
         
-        resultado = (numerador1 / (denominador1var1 - denominador1)) - ((numerador2*var1num2*var2num2)/denominador2);
+        
         System.out.println("Su resultado es: "+resultado);
         
         
