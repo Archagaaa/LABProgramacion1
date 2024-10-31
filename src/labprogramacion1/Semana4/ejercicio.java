@@ -9,5 +9,7 @@ package labprogramacion1.Semana4;
  * @author Aaron Archaga
  */
 public class ejercicio {
-    
+    public static void main(String[] args) {
+        System.out.println("Holamundo");
+    }
 }
