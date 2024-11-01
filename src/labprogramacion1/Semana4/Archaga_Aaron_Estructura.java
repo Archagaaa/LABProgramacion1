@@ -3,11 +3,21 @@ package labprogramacion1.Semana4;
 import java.util.Scanner;
 import java.util.Random;
 
+
 public class Archaga_Aaron_Estructura {
+    
+public static final String ANSI_BLACK = "\u001B[30m";
+public static final String ANSI_RED = "\u001B[31m";
+public static final String ANSI_GREEN = "\u001B[32m";
+public static final String ANSI_YELLOW = "\u001B[33m";
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion;
-        int contadorrepetido = 0;
+        int contadorreves = 0;
+        int contadorperfecto = 0;
+        int contadorprimo = 0;
+        int contadorvotacion = 0;
         
         System.out.println("Ingrese el ejercicio que desea realizar:"+
                             "\n----------"+
@@ -15,12 +25,13 @@ public class Archaga_Aaron_Estructura {
                             "\n2- Numero Perfecto"+
                             "\n3- Primos"+
                             "\n4- Votaciones"+
+                            "\n5- Salir"+
                             "\n----------");
         opcion = sc.nextInt();
-           
+        
             switch(opcion){
                 case 1:
-                    contadorrepetido++;
+                    contadorreves++;
                     System.out.println("----PALABRAS AL REVES----");
                     String palabra, reves = "";
                 
@@ -35,7 +46,7 @@ public class Archaga_Aaron_Estructura {
                     break;
                 
                 case 2:
-                    contadorrepetido++;
+                    contadorperfecto++;
                     System.out.println("----NUMERO PERFECTO----");
                     int numero = 0;
                     int divisor = 0;
@@ -60,7 +71,7 @@ public class Archaga_Aaron_Estructura {
                     break;
                 
                 case 3:
-                    contadorrepetido++;
+                    contadorprimo++;
                     System.out.println("----NUMEROS PRIMOS----");
                     Random random = new Random();
                     int aleatorio = random.nextInt(100); //Genera un numero aleatorio del 1-100
@@ -71,14 +82,31 @@ public class Archaga_Aaron_Estructura {
                         if (aleatorio % contador2 == 0){
                             primo += contador2;
                         }
-                        //Si es primo 
+                        //Si es primo lo despliega
                         if (primo == aleatorio + 1){
                             System.out.println("El "+aleatorio+" es divisor");
                             System.out.println("Divisores de el numero "+aleatorio+" son 1 y "+aleatorio);
                         }
                     contador2++;   
                     }
-                    break;    
-            }    
+                    break;   
+                case 4:
+                    contadorvotacion++;
+                    System.out.println("----VOTACIONES----");
+                    System.out.println("Ingrese cuantos votantes hay en el pais");
+                    int votantes = sc.nextInt();
+                    
+                    for (int conta = 1; conta <= votantes; conta++){
+                        
+                    }
+                    
+                    break;
+                case 5:
+                    System.out.println("Usted entro a palabras al reves "+contadorreves+" veces");
+                    System.out.println("Usted entro a numeros perefectos "+contadorperfecto+" veces");
+                    System.out.println("Usted entro a numeros primos "+contadorprimo+" veces");
+                    System.out.println("Usted entro a votaciones "+contadorvotacion+" veces");
+            }   
+            
     }
 }
