@@ -123,7 +123,7 @@ public class Archaga_Aaron_Estructura {
                     int votosvalidos = votoazul + votorojo + votonegro + votoamarillo;
                     
                     if (votosvalidos >= (votantes * 0.6)) {  // Se requiere el 60% de votos
-                    // Determinando el ganador
+                    // Determinar el ganador
                     if (votoazul > votorojo && votoazul > votonegro && votoazul > votoamarillo) {
                     System.out.println("La planilla ganadora es: azul");
                     } 
