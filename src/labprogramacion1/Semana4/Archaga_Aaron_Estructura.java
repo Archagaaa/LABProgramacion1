@@ -17,8 +17,7 @@ public class Archaga_Aaron_Estructura {
                             "\n4- Votaciones"+
                             "\n----------");
         opcion = sc.nextInt();
-        
-        do {    
+           
             switch(opcion){
                 case 1:
                     contadorrepetido++;
@@ -33,38 +32,53 @@ public class Archaga_Aaron_Estructura {
                         reves += palabra.charAt(length);
                     }
                     System.out.println("La palabra alreves es: "+reves);
-                break;
+                    break;
                 
                 case 2:
                     contadorrepetido++;
                     System.out.println("----NUMERO PERFECTO----");
-                    int numero, suma = 0;
+                    int numero = 0;
+                    int divisor = 0;
                     
                     //Ingresamos el numero
                     System.out.println("Ingrese un numero:");
                     numero = sc.nextInt();
                     
-                    for (int divisor = 1; divisor < numero; divisor++){
+                    for (int contador = 1; contador < numero; contador++){
                         //El if verifica que el nunmero del divisor se pueda dividir con el numero ingresado
-                        if (numero % 1 == 0){
-                            suma = suma + divisor;
+                        if (numero % contador == 0){
+                            divisor += contador;
                         }
                     }    
                         //desplega si es perfecto o no
-                        if (suma == numero){
+                        if (divisor == numero){
                             System.out.println("El numero es perfecto");
                         }
                         else{
                             System.out.println("El numero no es perfecto");
                         }
-                break;
+                    break;
                 
                 case 3:
+                    contadorrepetido++;
                     System.out.println("----NUMEROS PRIMOS----");
                     Random random = new Random();
-                    int aleatorio = random.nextInt(101); //Genera un numero aleatorio del 1-100
+                    int aleatorio = random.nextInt(100); //Genera un numero aleatorio del 1-100
+                    int primo = 0, contador2 = 1;
                     
-            }
-        }while (opcion != 5);    
+                    while (contador2 <= aleatorio) {
+                        //If verifica si el contador es divisior del numero generado
+                        if (aleatorio % contador2 == 0){
+                            primo += contador2;
+                        }
+                        //Si es primo 
+                        if (primo == aleatorio + 1){
+                            System.out.println("El "+aleatorio+" es divisor");
+                            System.out.println("Divisores de el numero "+aleatorio+" son 1 y "+aleatorio);
+                        }
+                    contador2++;   
+                    }
+                    break;    
+            }    
     }
 }
