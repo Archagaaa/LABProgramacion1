@@ -1,6 +1,7 @@
 package labprogramacion1.Semana4;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Archaga_Aaron_Estructura {
     public static void main(String[] args) {
@@ -32,6 +33,7 @@ public class Archaga_Aaron_Estructura {
                         reves += palabra.charAt(length);
                     }
                     System.out.println("La palabra alreves es: "+reves);
+                break;
                 
                 case 2:
                     contadorrepetido++;
@@ -47,13 +49,21 @@ public class Archaga_Aaron_Estructura {
                         if (numero % 1 == 0){
                             suma = suma + divisor;
                         }
+                    }    
+                        //desplega si es perfecto o no
                         if (suma == numero){
                             System.out.println("El numero es perfecto");
                         }
                         else{
                             System.out.println("El numero no es perfecto");
                         }
-                    }
+                break;
+                
+                case 3:
+                    System.out.println("----NUMEROS PRIMOS----");
+                    Random random = new Random();
+                    int aleatorio = random.nextInt(101); //Genera un numero aleatorio del 1-100
+                    
             }
         }while (opcion != 5);    
     }
