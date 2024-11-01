@@ -141,7 +141,7 @@ public class Archaga_Aaron_Estructura {
                     }
                     } 
                     else {
-                    System.out.println("VOTACIÓN FALLIDA no se alacanzo el 60%.");
+                    System.out.println("votacion fallida no se alacanzo el 60%.");
                     }
                     break;
                     
