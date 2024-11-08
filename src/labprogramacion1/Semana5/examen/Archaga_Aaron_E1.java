@@ -12,7 +12,7 @@ public class Archaga_Aaron_E1 {
                                 "\nIngrese una opcion: "+
                                 "\n1- Piramide"+
                                 "\n2- El mayor"+
-                                "\n3- CANALES"+
+                                "\n3- Canales"+
                                 "\n4- Caracter Vocales"+
                                 "\n5- Salir");
             opcion = sc.nextInt();
@@ -25,12 +25,11 @@ public class Archaga_Aaron_E1 {
                     
                     System.out.println("Cantidad de filas de la piramide: "+cantidadfilas);
                     
-                    for (int nfilas = 1; nfilas <= cantidadfilas; nfilas++) {
+                    for (int nfila = 1; nfila <= cantidadfilas; nfila++) {
                         int sumadefila = 0;
-                        for (int contador = 0; contador < nfilas; contador++) {
+                        for (int contador = 0; contador < nfila; contador++) {
                             System.out.print(numeroinicial + " ");
                             sumadefila += numeroinicial;
-                            
                             //El numero inicial aumenta en 2 ya que son numeros impares
                             numeroinicial += 2; 
                         }
@@ -78,7 +77,7 @@ public class Archaga_Aaron_E1 {
                 case 3:
                     System.out.println("----CANALES----");
                     String nombrecliente;
-                    String respuesta;
+                    String respuestacanal = "";
                     String tipodecaja;
                     int preciodecaja = 0;
                     int contadordenormal = 0;
@@ -89,7 +88,7 @@ public class Archaga_Aaron_E1 {
                     System.out.println("Ingrese su primer nombre:");
                     nombrecliente = sc.next();
                     
-                    while(true){
+                    do{
                         String tipodecanal;
                         
                         System.out.println("Ingrese el tipo de canal - NORMAL - o - HD -");
@@ -107,13 +106,15 @@ public class Archaga_Aaron_E1 {
                             System.out.println("Canal no valido vuelva a intentar");
                             continue;
                         }
-                        System.out.println("Desea ingresar otro canal - SI - o - NO -");
-                        respuesta = sc.next().toUpperCase();
                         
-                        if (respuesta.equals("NO")){
+                        System.out.println("Desea ingresar otro canal - SI - o - NO -");
+                        respuestacanal = sc.next().toUpperCase();
+                        
+                        if (respuestacanal.equals("NO")){
                             break;
                         }
-                    }
+                        
+                    } while(!respuestacanal.equals("no"));
                     
                     System.out.println("Ingrese el tipo de caja: - LIGHTBOX -, - HDBOX - o - DVRBOX- ");
                     tipodecaja = sc.next().toUpperCase();
@@ -154,9 +155,7 @@ public class Archaga_Aaron_E1 {
                     System.out.println("HASTA LUEGO");
                     break;
             }
-            
+            System.out.println("INGRESE UNA OPCION VALIDA");
         } while(opcion != 5);
-        
-        System.out.println("Vuelva a introducir una opcion");
     }
 }
