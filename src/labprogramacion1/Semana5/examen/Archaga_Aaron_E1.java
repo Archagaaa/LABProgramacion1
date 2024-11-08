@@ -66,6 +66,7 @@ public class Archaga_Aaron_E1 {
                   
                     }while(!respuestau.equals("no"));
                     
+                    //Salida
                     if (contador > 0){
                         promedio = suma / contador;
                         System.out.println("El numero mayor fue: "+numeromayor);
@@ -88,7 +89,7 @@ public class Archaga_Aaron_E1 {
                     System.out.println("Ingrese su primer nombre:");
                     nombrecliente = sc.next();
                     
-                    do{
+                    do{ //do while para el ciclo de eleccion de canales
                         String tipodecanal;
                         
                         System.out.println("Ingrese el tipo de canal - NORMAL - o - HD -");
@@ -96,11 +97,11 @@ public class Archaga_Aaron_E1 {
                         
                         if(tipodecanal.equals("NORMAL")){
                             contadordenormal++;
-                            subtotal += 20;
+                            subtotal += 20;  //el canal normal vale 20 entonces los suma automaticamanete
                         }
                         else if (tipodecanal.equals("HD")){
                             contadordehd++;
-                            subtotal += 30;
+                            subtotal += 30; //igual que el canal hd, mismo procedimiento
                         }
                         else{
                             System.out.println("Canal no valido vuelva a intentar");
@@ -120,7 +121,7 @@ public class Archaga_Aaron_E1 {
                     tipodecaja = sc.next().toUpperCase();
                     
                     if(tipodecaja.equals("LIGHTBOX")){
-                        preciodecaja = 50;
+                        preciodecaja = 50; //la caja vale 20 entonces los suma automaticamanete al precio ya que solo es una
                     }
                     else if(tipodecaja.equals("HDBOX")){
                         preciodecaja = 100;
@@ -137,6 +138,7 @@ public class Archaga_Aaron_E1 {
                     impuesto = subtotal * 0.15;
                     total = subtotal + impuesto;
                     
+                    //Salida
                     System.out.println("---DETALLES---");
                     System.out.println("Nombre: "+nombrecliente);
                     System.out.println("Cantidad canales NORMALES: "+contadordenormal);
@@ -148,6 +150,28 @@ public class Archaga_Aaron_E1 {
                 break;
                     
                 case 4:
+                    System.out.println("----CARACTERES VOCALES----");
+                    String palabra;
+                    char caracter;
+                    int contador2 = 0;
+                    
+                    System.out.println("Ingrese una palabra: ");
+                    palabra = sc.next();
+                    
+                    for (int i = 0; i < palabra.length(); i++) {
+                        caracter = palabra.charAt(i);
+                        switch(caracter){
+                            case 'a':
+                            case 'e':
+                            case 'i':
+                            case 'o':
+                            case 'u':
+                                contador2++;
+                                break;
+                            default:
+                        }
+                    }
+                    System.out.println("La palabra tiene " + contador2 + " vocales minusculas.");
                     
                     break;
                     
@@ -155,7 +179,6 @@ public class Archaga_Aaron_E1 {
                     System.out.println("HASTA LUEGO");
                     break;
             }
-            System.out.println("INGRESE UNA OPCION VALIDA");
         } while(opcion != 5);
     }
 }
