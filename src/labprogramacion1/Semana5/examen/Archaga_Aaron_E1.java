@@ -8,10 +8,11 @@ public class Archaga_Aaron_E1 {
         int opcion = 0;
         
         do {
-            System.out.println("Ingrese una opcion: "+
+            System.out.println("=========================="+
+                                "\nIngrese una opcion: "+
                                 "\n1- Piramide"+
                                 "\n2- El mayor"+
-                                "\n3- Ejercicio 3"+
+                                "\n3- CANALES"+
                                 "\n4- Caracter Vocales"+
                                 "\n5- Salir");
             opcion = sc.nextInt();
@@ -44,32 +45,28 @@ public class Archaga_Aaron_E1 {
                     double promedio = 0;
                     int numero;
                     int contador = 0;
+                    String respuestau;
                     
-                    //Esto revisa el primer numero ingresado
-                    boolean primernumero = true; 
-                    
-                    while(true){
+                    do{
                         System.out.println("Ingrese un numero o la palabra - no -");
-                        String respuesta = sc.next();
+                        respuestau = sc.next();
                         
-                        if(respuesta.equals("no")){
+                        if(respuestau.equals("no")){
                             break;
                         }
                         
                         //Esto convierte la respuesta del usuario si es un numero a un int
-                        numero = Integer.parseInt(respuesta);
+                        numero = Integer.parseInt(respuestau);
                         suma += numero;
                         
                         contador++; //Este contador cuenta cuantos numeros se van ingresando
                         
-                        if (primernumero){
-                            numeromayor = numero;
-                            primernumero = false;
-                        }
-                        else if(numeromayor < numero) {
+                        if (numero > numeromayor){
                             numeromayor = numero;
                         }
-                    }
+                  
+                    }while(!respuestau.equals("no"));
+                    
                     if (contador > 0){
                         promedio = suma / contador;
                         System.out.println("El numero mayor fue: "+numeromayor);
@@ -79,8 +76,75 @@ public class Archaga_Aaron_E1 {
                     break;
                     
                 case 3:
+                    System.out.println("----CANALES----");
+                    String nombrecliente;
+                    String respuesta;
+                    String tipodecaja;
+                    int preciodecaja = 0;
+                    int contadordenormal = 0;
+                    int contadordehd = 0;
+                    int subtotal = 0;
+                    double total = 0, impuesto;
                     
-                    break;
+                    System.out.println("Ingrese su primer nombre:");
+                    nombrecliente = sc.next();
+                    
+                    while(true){
+                        String tipodecanal;
+                        
+                        System.out.println("Ingrese el tipo de canal - NORMAL - o - HD -");
+                        tipodecanal = sc.next().toUpperCase();
+                        
+                        if(tipodecanal.equals("NORMAL")){
+                            contadordenormal++;
+                            subtotal += 20;
+                        }
+                        else if (tipodecanal.equals("HD")){
+                            contadordehd++;
+                            subtotal += 30;
+                        }
+                        else{
+                            System.out.println("Canal no valido vuelva a intentar");
+                            continue;
+                        }
+                        System.out.println("Desea ingresar otro canal - SI - o - NO -");
+                        respuesta = sc.next().toUpperCase();
+                        
+                        if (respuesta.equals("NO")){
+                            break;
+                        }
+                    }
+                    
+                    System.out.println("Ingrese el tipo de caja: - LIGHTBOX -, - HDBOX - o - DVRBOX- ");
+                    tipodecaja = sc.next().toUpperCase();
+                    
+                    if(tipodecaja.equals("LIGHTBOX")){
+                        preciodecaja = 50;
+                    }
+                    else if(tipodecaja.equals("HDBOX")){
+                        preciodecaja = 100;
+                    }
+                    else if(tipodecaja.equals("DVRBOX")){
+                        preciodecaja = 150;
+                    }
+                    else{
+                        System.out.println("Caja no valida vuelva a intentar");
+                        continue;
+                    }
+                    
+                    subtotal += preciodecaja;
+                    impuesto = subtotal * 0.15;
+                    total = subtotal + impuesto;
+                    
+                    System.out.println("---DETALLES---");
+                    System.out.println("Nombre: "+nombrecliente);
+                    System.out.println("Cantidad canales NORMALES: "+contadordenormal);
+                    System.out.println("Cantidad de canales HD: "+contadordehd);
+                    System.out.println("Subtotal: "+subtotal);
+                    System.out.println("Impuesto: "+impuesto);
+                    System.out.println("Total: "+total);
+                    
+                break;
                     
                 case 4:
                     
