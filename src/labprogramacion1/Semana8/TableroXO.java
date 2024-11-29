@@ -1,5 +1,7 @@
 package labprogramacion1.Semana8;
-
+/*
+Tranajo hecho con Carlos Mauricio
+*/
 import java.awt.Color;
 import javax.swing.JLabel;
 
