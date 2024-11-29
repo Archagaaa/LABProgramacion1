@@ -1,6 +1,6 @@
 package labprogramacion1.Semana8;
 /*
-Tranajo hecho con Carlos Mauricio
+Trabajo hecho con Carlos Mauricio
 */
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -76,6 +76,7 @@ public class TableroXO extends javax.swing.JFrame {
                 posicion[victorias[i][2]-1].setBackground(Color.green);
                 
                 Decirturno.setText("Ha ganado X");
+                mostrarVentanaGanador("¡Ha ganado X!");
                 hayganador = true;
             }
             //revisa donde gano el O
@@ -89,6 +90,7 @@ public class TableroXO extends javax.swing.JFrame {
                 posicion[victorias[i][2]-1].setBackground(Color.green);
                 
                 Decirturno.setText("Ha ganado O");
+                mostrarVentanaGanador("¡Ha ganado O!");
                 hayganador = true;
             }
             //Comprobar si el tablero se llena para el empate
@@ -103,11 +105,32 @@ public class TableroXO extends javax.swing.JFrame {
                 
                 if(tablerolleno){
                     Decirturno.setText("Empate");
+                    mostrarVentanaGanador("¡Es un empate!");
                 }
             }
-            
         }
     }
+   
+    
+    //Metodo para mostrar la ventana con el botón de salir
+    private void mostrarVentanaGanador(String mensaje) {
+    int opcion = javax.swing.JOptionPane.showOptionDialog(
+        this,
+        mensaje + "\n¿Quieres salir del juego?",
+        "Juego terminado",
+        javax.swing.JOptionPane.OK_OPTION,
+        javax.swing.JOptionPane.INFORMATION_MESSAGE,
+        null,
+        new Object[]{"Salir"},
+        "Salir"
+    );
+
+    if (opcion == javax.swing.JOptionPane.OK_OPTION) {
+        new Menu().setVisible(true);
+        this.dispose();
+    }
+}
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -125,8 +148,6 @@ public class TableroXO extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Decirturno = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        nombreplayer2 = new javax.swing.JLabel();
-        nombreplayer1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -296,12 +317,6 @@ public class TableroXO extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         titulo.setText("TIC TAC TOE");
 
-        nombreplayer2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        nombreplayer2.setText("Player 2: ");
-
-        nombreplayer1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        nombreplayer1.setText("Player 1: ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -316,13 +331,8 @@ public class TableroXO extends javax.swing.JFrame {
                         .addComponent(titulo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nombreplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                                .addComponent(nombreplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Decirturno, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(39, 39, 39))
+                        .addComponent(Decirturno, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,11 +343,7 @@ public class TableroXO extends javax.swing.JFrame {
                 .addComponent(Decirturno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombreplayer2)
-                    .addComponent(nombreplayer1))
-                .addGap(10, 10, 10))
+                .addGap(47, 47, 47))
         );
 
         pack();
@@ -432,8 +438,6 @@ public class TableroXO extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel nombreplayer1;
-    private javax.swing.JLabel nombreplayer2;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
