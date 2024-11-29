@@ -1,5 +1,7 @@
 package labprogramacion1.Semana8;
-
+/*
+Trabajo hecho con Carlos Mauricio
+*/
 public class Menu extends javax.swing.JFrame {
 
     public Menu() {
