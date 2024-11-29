@@ -60,6 +60,8 @@ public class TableroXO extends javax.swing.JFrame {
     
     //Metodo para comprobar el ganador
     public void comprobarganador(){
+        boolean hayganador = false;
+        
         for (int i = 0; i < victorias.length; i++) {
             //Revisa donde gano la x
             if(posicion[victorias[i][0]-1].getText().equals("X") &&
@@ -72,6 +74,7 @@ public class TableroXO extends javax.swing.JFrame {
                 posicion[victorias[i][2]-1].setBackground(Color.green);
                 
                 Decirturno.setText("Ha ganado X");
+                hayganador = true;
             }
             //revisa donde gano el O
             if(posicion[victorias[i][0]-1].getText().equals("O") &&
@@ -84,6 +87,21 @@ public class TableroXO extends javax.swing.JFrame {
                 posicion[victorias[i][2]-1].setBackground(Color.green);
                 
                 Decirturno.setText("Ha ganado O");
+                hayganador = true;
+            }
+            //Comprobar si el tablero se llena para el empate
+            if(!hayganador){
+                boolean tablerolleno = true;
+                for (JLabel label : posicion) {
+                    if (label.getText().equals("")) {
+                        tablerolleno = false;
+                        break;
+                    }
+                }    
+                
+                if(tablerolleno){
+                    Decirturno.setText("Empate");
+                }
             }
             
         }
@@ -271,7 +289,7 @@ public class TableroXO extends javax.swing.JFrame {
         );
 
         Decirturno.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Decirturno.setText("Turno de:");
+        Decirturno.setText("Turno de: X");
 
         titulo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         titulo.setText("TIC TAC TOE");
