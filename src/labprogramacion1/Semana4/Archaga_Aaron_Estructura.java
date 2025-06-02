@@ -15,14 +15,15 @@ public class Archaga_Aaron_Estructura {
         
         do{
             
-            System.out.println("Ingrese el ejercicio que desea realizar:"+
-                            "\n----------"+
-                            "\n1- Palabras alreves"+
-                            "\n2- Numero Perfecto"+
-                            "\n3- Primos"+
-                            "\n4- Votaciones"+
-                            "\n5- Salir"+
-                            "\n----------");
+            System.out.println("""
+                               Ingrese el ejercicio que desea realizar:
+                               ----------
+                               1- Palabras alreves
+                               2- Numero Perfecto
+                               3- Primos
+                               4- Votaciones
+                               5- Salir
+                               ----------""");
             opcion = sc.nextInt();
         
             switch(opcion){
@@ -96,11 +97,12 @@ public class Archaga_Aaron_Estructura {
                     
                     //Menu para elegir por quien votar
                     for (int conta = 1; conta <= votantes; conta++){
-                        System.out.println("PLANILLAS"+
-                                           "\n- azul"+
-                                           "\n- rojo"+
-                                           "\n- negro"+
-                                           "\n- amarillo");
+                        System.out.println("""
+                                           PLANILLAS
+                                           - azul
+                                           - rojo
+                                           - negro
+                                           - amarillo""");
                         System.out.println("escriba por quien votara");
                         String voto = sc.nextLine().toLowerCase();
                         
